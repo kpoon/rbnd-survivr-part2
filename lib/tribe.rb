@@ -5,7 +5,7 @@ class Tribe
 		@name = options[:name]
 		@members = options[:members]
 
-		puts "#{@name} tribe"
+		puts "#{@name} tribe."
 	end	
 
 	def to_s
@@ -19,6 +19,7 @@ class Tribe
     voted_off_list = @members.select {|member| member != immune}
     voted_off = voted_off_list.sample
     @members.delete(voted_off)
+    puts "#{voted_off.to_s.capitalize} got eliminated!"
     return voted_off
   end
 end
