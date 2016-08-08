@@ -11,6 +11,11 @@ class Jury
 
 	def cast_votes(finalists)
 		jury_vote = Hash.new(0)
+		
+		finalists.each do |finalist|
+			jury_vote[finalist] = 0
+		end	
+
 		@members.each do |member|
 			finalist = finalists.sample
 			jury_vote[finalist] += 1
@@ -28,6 +33,7 @@ class Jury
 	def announce_winner(final_votes)
 		winner = final_votes.max_by{|k, v| v}[0]
 		puts "The winner is #{winner.to_s.capitalize}!"
+		return winner
 	end	
 end
 

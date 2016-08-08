@@ -32,7 +32,6 @@ def phase_one
 		puts "Tribe #{losing_tribe.to_s.red} lost the Immunity Challenge."
 		eliminate_contestant = losing_tribe.tribal_council
 	end
-	puts ""
 end
 
 def phase_two
@@ -46,7 +45,6 @@ def phase_two
 		immune_contestant = @borneo.individual_immunity_challenge
 		eliminate_contestant = @merge_tribe.tribal_council({immune: immune_contestant})
 	end	
-	puts ""
 end
 
 def phase_three
